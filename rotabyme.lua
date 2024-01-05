@@ -199,7 +199,7 @@ function harvest(list)
                     	bot:hit(tile.x,tile.y)
 		    else
 		    	bot:findPath(tile.x,tile.y)
-			sleep(delayHarvest)
+			sleep(delayHarvest)join
 			bot:hit(tile.x,tile.y)
 		    end
                     sleep(delayHarvest) 
@@ -350,7 +350,6 @@ function tilealbg(x,y)
         return {tilebg = tilebgx}
     end
 end
-
 
 BotPxz = BotPx-1
 BotPyz = BotPy-1
@@ -598,6 +597,8 @@ while isOwner == true do
                 if world.name ~= list then
                     join(list,FarmWorldID)
                 end
+                bot:warp(world_break)
+                sleep(5000)
                 TrashTheJunks()
                 harvest(list)
                 sleep(1000)
@@ -606,6 +607,7 @@ while isOwner == true do
                 if world.name ~= list then
                     join(list,FarmWorldID)
                 end
+                
                 TrashTheJunks()
                 PNB(list)
                 sleep(1000)
